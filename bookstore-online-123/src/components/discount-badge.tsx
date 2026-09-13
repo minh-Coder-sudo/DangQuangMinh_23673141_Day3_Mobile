@@ -1,0 +1,3 @@
+import { StyleSheet, Text, View } from 'react-native';
+export function DiscountBadge({ discountPercent, isNew }: { discountPercent?: number; isNew?: boolean }) { if (!discountPercent && !isNew) return null; return <View style={[styles.badge, isNew && styles.newBadge]}><Text style={styles.text}>{isNew ? 'Mới' : `-${discountPercent}%`}</Text></View>; }
+const styles = StyleSheet.create({ badge: { backgroundColor: '#DC2626', borderRadius: 4, left: 6, paddingHorizontal: 6, paddingVertical: 3, position: 'absolute', top: 6 }, newBadge: { backgroundColor: '#F97316' }, text: { color: '#FFFFFF', fontSize: 11, fontWeight: '700' } });
